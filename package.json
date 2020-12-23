@@ -13,12 +13,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@types/react": "^17.0.0",
+    "assemble": "^0.3.83",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "frontend": "^2.0.0-alpha.4",
+    "grunt": "^0.4.5",
     "http": "0.0.1-security",
+    "material-ui": "^0.20.2",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "styles": "^0.2.1"
   },
   "devDependencies": {
     "parcel-bundler": "^1.12.4"
