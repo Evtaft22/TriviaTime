@@ -21,3 +21,20 @@
   border-radius: 20px;
   color: white;
 }
+
+.create__game__button {
+  margin-bottom: 80px;
+  text-decoration: none;
+}
+
+/* #length__of__game__select {
+  min-width: "800px"
+}
+
+#category__select {
+  min-width: "800px"
+}
+
+#difficulty__select {
+  min-width: "800px"
+} */

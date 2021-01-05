@@ -11,7 +11,7 @@ const Home = () => {
       </div>
       <Link to="/createGame" className="home__button">
         <Button variant="contained">
-          Start Game
+          New Game
         </Button>
       </Link>
       <Link to="/joinGame" className="home__button">
