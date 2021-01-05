@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "/styles/Create.css";
+import "/styles/CreateGame.css";
 import { FormControl, InputLabel, Select, MenuItem, Button } from "@material-ui/core";
 import { makeStyles } from '@material-ui/core/styles';
 
