@@ -18,14 +18,13 @@ const CreateGame = () => {
   const [ numOfQuestions, setNumOfQuestions] = useState("");
   const [ category, setCategory] = useState("");
   const [ difficulty, setDifficulty] = useState("");
-  const [numOfPlayers, setNumOfPlayers] = useState(0);
   const [url, setUrl] = useState("");
 
   const handleLengthOfGame = (e) => setNumOfQuestions(e.target.value);
   const handleCategory = (e) => setCategory(e.target.value);
   const handleDifficulty = (e) => setDifficulty(e.target.value);
 
-  const handleUrlChange = () => {
+  const createUrl = () => {
     if (category === "" && difficulty === "") {
       setUrl(`https://opentdb.com/api.php?amount=${numOfQuestions}`);
     } else if (category === "") {
@@ -35,8 +34,6 @@ const CreateGame = () => {
     } else {
       setUrl(`https://opentdb.com/api.php?amount=${numOfQuestions}&category=${category}&difficulty=${difficulty}`);
     }
-
-    console.log(url);
   };
 
   return (
@@ -116,7 +113,7 @@ const CreateGame = () => {
         </Select>
       </FormControl>
 
-      <Button variant="contained" onClick={handleUrlChange}>Create Game</Button>
+      <Button variant="contained" onClick={createUrl}>Create Game</Button>
     </div>
   );
 };
