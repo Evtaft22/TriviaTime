@@ -27,12 +27,12 @@ const useStyles = makeStyles((theme) => ({
 
 const CreateGame = () => {
   const classes = useStyles();
+  const [url, setUrl] = useState("");
+  const [accessCode, setAccessCode] = useState("");
   const [ numOfQuestions, setNumOfQuestions] = useState("");
   const [ category, setCategory] = useState("");
   const [ difficulty, setDifficulty] = useState("");
-  const [url, setUrl] = useState("");
   const [validURL, setValidURL] = useState(false);
-  const [accessCode, setAccessCode] = useState("");
 
   const handleLengthOfGame = (e) => setNumOfQuestions(e.target.value);
   const handleCategory = (e) => setCategory(e.target.value);
