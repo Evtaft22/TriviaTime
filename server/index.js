@@ -1,18 +1,22 @@
 require("dotenv").config();
 const express = require("express");
-const http = require('http');
 const path = require("path");
+const cors = require("cors");
+const http = require("http");
+require("./db");
+const { route } = require("./api");
 
 const PORT = process.env.PORT || 3000;
-const CLIENT_PATH = path.join(__dirname, "../dist");
+const PARCEL_PATH = path.join(__dirname, "../dist");
 
 const app = express();
 app.use(express.json());
-app.use(express.static(CLIENT_PATH));
+app.use("/api", cors(), route);
+app.use(express.static(PARCEL_PATH));
 const server = http.createServer(app);
 
 app.get("*", (req, res) => {
-  res.sendFile(`${CLIENT_PATH}/index.html`);
+  res.sendFile(`${PARCEL_PATH}/index.html`);
 });
 
 server.listen(PORT, () => {
