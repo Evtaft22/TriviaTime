@@ -58,11 +58,12 @@ const CreateGame = () => {
   const classes = useStyles();
   const [url, setUrl] = useState("");
   const [accessCode, setAccessCode] = useState("");
-  const [ numOfQuestions, setNumOfQuestions] = useState("");
-  const [ category, setCategory] = useState("");
+  const [numOfQuestions, setNumOfQuestions] = useState("");
+  const [category, setCategory] = useState("");
   const [catVal, setCatVal] = useState("");
-  const [ difficulty, setDifficulty] = useState("");
+  const [difficulty, setDifficulty] = useState("");
   const [validURL, setValidURL] = useState(false);
+  const [gameId, setGameId] = useState(0);
 
   useEffect(() => {
     let code = "";
@@ -107,6 +108,9 @@ const CreateGame = () => {
       alert("You must decide how long you want to play.");
     } else {
       axios.post("/api/newGame", gameObj)
+        .then(() => axios.get(`/api/getGame/${accessCode}`)
+          .then(gameObj => setGameId(gameObj.data.id))
+          .catch(err => console.error("Could not get this game's ID.", err)))
         .then(() => setValidURL(true))
         .catch(err => console.error("Could not add the new game.", err));
     }
@@ -198,7 +202,7 @@ const CreateGame = () => {
       </div>
     ) : (
       <Redirect to={{
-        pathname: "/mainMenu",
+        pathname: `/mainMenu/${gameId}`,
         state: {
           url: url,
           accessCode: accessCode,

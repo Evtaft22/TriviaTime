@@ -3,6 +3,7 @@ const { Router } = require("express");
 const {
   addNewGame,
   getGameCodes,
+  getGame,
 } = require("./queries");
 
 const route = Router();
@@ -19,6 +20,13 @@ route.get("/gameCodes", (req, res) => {
     .then(games => res.status(200).send(games))
     .catch(err => res.status(500).send(err));
 });
+
+route.get("/getGame/:code", (req, res) => {
+  const gameCode = req.params.code;
+  getGame(gameCode)
+    .then(game => res.status(200).send(game))
+    .catch(err => res.status(500).send(err));
+})
 
 module.exports = {
   route,

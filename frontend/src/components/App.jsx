@@ -5,6 +5,7 @@ import Home from "./Home.jsx";
 import CreateGame from "./CreateGame.jsx";
 import JoinGame from "./JoinGame.jsx";
 import MainMenu from "./MainMenu.jsx";
+import MobileMenu from "./MobileMenu.jsx";
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
           <Route exact={true} path="/" render={() => <Home />} />
           <Route exact={true} path="/createGame" render={() => <CreateGame />} />
           <Route exact={true} path="/joinGame" render={() => <JoinGame />} />
-          <Route exact={true} path="/mainMenu" render={(props) => <MainMenu {...props} />} />
+          <Route exact={true} path="/mainMenu/:id" render={props => <MainMenu {...props} />} />
+          <Route exact={true} path="/mobileMenu/:id" render={() => <MobileMenu />} />
       </Switch>
     </Router>
   );
