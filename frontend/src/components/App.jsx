@@ -15,7 +15,7 @@ const App = () => {
           <Route exact={true} path="/createGame" render={() => <CreateGame />} />
           <Route exact={true} path="/joinGame" render={() => <JoinGame />} />
           <Route exact={true} path="/mainMenu/:id" render={props => <MainMenu {...props} />} />
-          <Route exact={true} path="/mobileMenu/:id" render={() => <MobileMenu />} />
+          <Route exact={true} path="/mobileMenu/:id" render={({ match }) => <MobileMenu match={match} />} />
       </Switch>
     </Router>
   );

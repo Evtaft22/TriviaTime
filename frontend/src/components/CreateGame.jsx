@@ -103,6 +103,7 @@ const CreateGame = () => {
       numOfQuestions,
       category,
       difficulty,
+      numOfPlayers: 0,
     };
     if (numOfQuestions === "") {
       alert("You must decide how long you want to play.");
@@ -204,11 +205,12 @@ const CreateGame = () => {
       <Redirect to={{
         pathname: `/mainMenu/${gameId}`,
         state: {
-          url: url,
-          accessCode: accessCode,
-          numOfQuestions: numOfQuestions,
-          category: category,
-          difficulty: difficulty,
+          url,
+          accessCode,
+          numOfQuestions,
+          category,
+          difficulty,
+          gameId,
         }
        }}
       />

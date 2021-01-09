@@ -5,8 +5,6 @@ import "/styles/JoinGame.css";
 import { Button, InputLabel, Input, FormControl } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
-
-
 // members on team are linked
 // only one answer per team per question
 // all members must decide unanimously on an answer
